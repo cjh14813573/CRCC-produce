@@ -50,7 +50,7 @@ void SendOneChar(unsigned char Row,unsigned char Col,unsigned char *ch, unsigned
 int search_word(unsigned char *pVal)
 {
 	int i;
-	for(i=0; i<202; i++)
+	for(i=0; i<205; i++)
 		{
 		if((ch_maxtric[i].code[0] == pVal[0]) && (ch_maxtric[i].code[1] == pVal[1]))
 			return i;
@@ -1175,6 +1175,8 @@ int lcd(void)
 	//printf("\n---------------%d\n",hd_lcd);
 	ioctl(hd_lcd, IOC_SET_BL, (backlight&0xff));	
 	printf("\n&&&&&&&&&&&%d\n",backlight);	
+
+	sleep(5);
 
 	///////////////////////开始主循环
 	/////////////buf:上8，下2，左16，右1，中4
