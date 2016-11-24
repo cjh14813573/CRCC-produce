@@ -59,14 +59,14 @@ void DataBlock2(void)
 		}
 		if(db_time_alarm[0]==0)
 		{
-			time_flag=0;
+			time_flag=1;
 			gs_NewDataMng.fSetCData(TEST_DEVICE,TEST_SERIAL_5_CONNECTION,DATA,&time_flag);
 			gs_EventMng.fJudgeDI(TEST_DEVICE,TEST_SERIAL_5_CONNECTION,time_flag,AlarmStat.test_alarm_flag[TEST_SERIAL_5_CONNECTION],ALARM_ID_SERIAL_4,ALARM_CONTENT_ALARM);
 		}
 		if(db_time_alarm[0]>=3)
 		{
 			db_time_alarm[0]=3;
-			time_flag=1;
+			time_flag=0;
 			gs_NewDataMng.fSetCData(TEST_DEVICE,TEST_SERIAL_5_CONNECTION,DATA,&time_flag);
 			gs_EventMng.fJudgeDI(TEST_DEVICE,TEST_SERIAL_5_CONNECTION,time_flag,AlarmStat.test_alarm_flag[TEST_SERIAL_5_CONNECTION],ALARM_ID_SERIAL_4,ALARM_CONTENT_ALARM);
 		}
